@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - schedule.qmd
+    - resources.qmd
+  resources:
+    - "materials/lectures/*.pptx"
+    - "ENV3210_Syllabus.html"
+
+website:
+  title: "ENV3210 — Aquatic Sciences"
+  navbar:
+    background: "#0f5132"
+    foreground: "#ffffff"
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Schedule
+        href: schedule.qmd
+      - text: Resources
+        href: resources.qmd
+  page-footer:
+    center: |
+      ENV3210 Aquatic Sciences · University of Guyana · Faculty of Earth & Environmental Sciences<br>
+      Course materials &copy; 2026 Ajay Persaud
+
+format:
+  html:
+    theme:
+      - default
+      - custom.scss
+    toc: false

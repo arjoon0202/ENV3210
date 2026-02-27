@@ -1,0 +1,224 @@
+---
+title: "Weekly Schedule"
+toc: false
+---
+
+```{=html}
+<p class="section-lead">
+  The course progresses from foundations through core ecological skills to applied topics and synthesis. Each week pairs a lecture with a data science module. Materials appear below as they become available.
+</p>
+
+<!-- ── Phase 1: Foundations ── -->
+<div class="phase-header">
+  <span class="phase-tag foundations">Weeks 1–4</span>
+  <span class="phase-title">Foundations</span>
+</div>
+
+<div class="week-card">
+  <div class="week-num">01</div>
+  <div class="week-topics">
+    <div class="week-lecture">Why Freshwater Matters</div>
+    <div class="week-ds">What Is Environmental Data Science?</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_01_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_01_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_01_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">02</div>
+  <div class="week-topics">
+    <div class="week-lecture">How Water Works</div>
+    <div class="week-ds">Reading &amp; Interpreting Data Visualisations</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_02_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_02_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_02_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">03</div>
+  <div class="week-topics">
+    <div class="week-lecture">Rivers &amp; Streams</div>
+    <div class="week-ds">R Bootcamp Part 1: First Contact</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_03_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_03_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_03_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">04</div>
+  <div class="week-topics">
+    <div class="week-lecture">Lakes &amp; Reservoirs</div>
+    <div class="week-ds">R Bootcamp Part 2: Tidyverse Essentials</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_04_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_04_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_04_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<!-- ── Phase 2: Core Skills ── -->
+<div class="phase-header">
+  <span class="phase-tag core">Weeks 5–8</span>
+  <span class="phase-title">Core Skills</span>
+</div>
+
+<div class="week-card">
+  <div class="week-num">05</div>
+  <div class="week-topics">
+    <div class="week-lecture">Nutrients &amp; Eutrophication</div>
+    <div class="week-ds">Visualisation with ggplot2</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_05_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_05_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_05_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">06</div>
+  <div class="week-topics">
+    <div class="week-lecture">Wetlands &amp; Estuaries</div>
+    <div class="week-ds">Exploratory Data Analysis</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_06_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_06_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_06_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">07</div>
+  <div class="week-topics">
+    <div class="week-lecture">Plankton &amp; Biodiversity</div>
+    <div class="week-ds">Introduction to Multivariate Thinking</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_07_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_07_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_07_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">08</div>
+  <div class="week-topics">
+    <div class="week-lecture">Bioassessment &amp; Monitoring</div>
+    <div class="week-ds">Constrained Ordination &amp; Hypothesis Testing</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_08_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_08_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_08_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<!-- ── Phase 3: Applied ── -->
+<div class="phase-header">
+  <span class="phase-tag applied">Weeks 9–11</span>
+  <span class="phase-title">Applied Methods &amp; Frontiers</span>
+</div>
+
+<div class="week-card">
+  <div class="week-num">09</div>
+  <div class="week-topics">
+    <div class="week-lecture">Pollution I: Visible</div>
+    <div class="week-ds">Spatial Data &amp; Mapping</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_09_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_09_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_09_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">10</div>
+  <div class="week-topics">
+    <div class="week-lecture">Pollution II: Invisible</div>
+    <div class="week-ds">Introduction to Machine Learning</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_10_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_10_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_10_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">11</div>
+  <div class="week-topics">
+    <div class="week-lecture">Water Governance</div>
+    <div class="week-ds">Data for Decision-Making</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_11_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_11_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_11_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<!-- ── Phase 4: Synthesis ── -->
+<div class="phase-header">
+  <span class="phase-tag synthesis">Weeks 12–13</span>
+  <span class="phase-title">Frontiers &amp; Synthesis</span>
+</div>
+
+<div class="week-card">
+  <div class="week-num">12</div>
+  <div class="week-topics">
+    <div class="week-lecture">Climate Change &amp; Freshwater</div>
+    <div class="week-ds">Remote Sensing &amp; Big Data</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_12_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_12_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_12_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<div class="week-card">
+  <div class="week-num">13</div>
+  <div class="week-topics">
+    <div class="week-lecture">Future of Freshwater Science</div>
+    <div class="week-ds">The Data-Literate Freshwater Scientist</div>
+  </div>
+  <div class="week-links">
+    <a class="material-link lecture-link" href="materials/lectures/Week_13_Lecture.pptx">Lecture</a>
+    <a class="material-link slides-link" href="materials/slides/Week_13_DS_Slides.html">Slides</a>
+    <a class="material-link handout-link" href="materials/handouts/Week_13_DS_Handout.html">Handout</a>
+  </div>
+</div>
+
+<script>
+// Check material link availability and disable missing ones
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.material-link').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    fetch(href, { method: 'HEAD' }).then(function(response) {
+      if (!response.ok) {
+        link.textContent = 'Coming soon';
+        link.removeAttribute('href');
+        link.classList.add('disabled');
+      }
+    }).catch(function() {
+      link.textContent = 'Coming soon';
+      link.removeAttribute('href');
+      link.classList.add('disabled');
+    });
+  });
+});
+</script>
+```

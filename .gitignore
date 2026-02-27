@@ -1,0 +1,9 @@
+_site/
+.quarto/
+ds-module-temp/
+.DS_Store
+*.swp
+node_modules/
+
+/.quarto/
+**/*.quarto_ipynb
