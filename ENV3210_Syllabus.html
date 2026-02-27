@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENV3210 — Aquatic Sciences | University of Guyana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f7;
+  --bg-alt: #f2f0ec;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #5c5c5c;
+  --text-light: #8a8a8a;
+  --accent: #0f5132;
+  --accent-light: #e8f0eb;
+  --accent-bright: #198754;
+  --teal: #0d6e6e;
+  --teal-light: #e6f3f3;
+  --gold: #b8860b;
+  --gold-light: #fdf6e3;
+  --border: #e0ddd8;
+  --border-light: #eeece8;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Hero --- */
+.hero {
+  background: linear-gradient(135deg, #0f3d2e 0%, #0d5a3e 40%, #0d6e6e 100%);
+  color: white;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(13,110,110,0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 32px 48px;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 100px;
+  padding: 6px 16px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+}
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.hero h1 span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.4em;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 640px;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-meta-item svg {
+  width: 18px; height: 18px;
+  opacity: 0.7;
+}
+
+/* --- Key Facts Strip --- */
+.keyfacts {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.keyfacts-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+}
+.keyfact {
+  padding: 20px 16px;
+  border-right: 1px solid var(--border-light);
+  text-align: center;
+}
+.keyfact:last-child { border-right: none; }
+.keyfact-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+.keyfact-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+
+/* --- Navigation Tabs --- */
+.nav-tabs-wrap {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.nav-tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* --- Main Content --- */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.section {
+  display: none;
+  padding: 48px 0 64px;
+  animation: fadeIn 0.3s ease;
+}
+.section.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* --- Content Blocks --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.content-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: box-shadow 0.2s;
+}
+.content-card:hover { box-shadow: var(--shadow-md); }
+.content-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.content-card h3 .icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.content-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* --- Curriculum Weeks --- */
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  margin-top: 40px;
+}
+.phase-header:first-of-type { margin-top: 0; }
+.phase-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.phase-tag.foundations { background: var(--accent-light); color: var(--accent); }
+.phase-tag.core { background: var(--teal-light); color: var(--teal); }
+.phase-tag.applied { background: var(--gold-light); color: var(--gold); }
+.phase-tag.synthesis { background: #f3e8ff; color: #7c3aed; }
+.phase-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+.week-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 32px;
+}
+.week-item {
+  display: grid;
+  grid-template-columns: 56px 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.week-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  background: #fdfcfa;
+}
+.week-item.expanded {
+  border-color: var(--accent);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--accent-light);
+}
+.week-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+.week-lecture {
+  font-weight: 500;
+  font-size: 0.93rem;
+}
+.week-ds {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.week-ds::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin-right: 8px;
+  vertical-align: middle;
+  opacity: 0.5;
+}
+.week-detail {
+  display: none;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 20px 24px;
+  margin-top: -2px;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.week-detail.expanded { display: block; }
+.week-detail .detail-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.week-detail .detail-label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+}
+.week-detail .threads {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.week-detail .thread-tag {
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* --- Assessment --- */
+.assess-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.assess-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.assess-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.assess-card.a1::before { background: var(--accent); }
+.assess-card.a2::before { background: var(--teal); }
+.assess-card.a3::before { background: var(--gold); }
+.assess-card.a4::before { background: #7c3aed; }
+.assess-weight {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.assess-card.a2 .assess-weight { color: var(--teal); }
+.assess-card.a3 .assess-weight { color: var(--gold); }
+.assess-card.a4 .assess-weight { color: #7c3aed; }
+.assess-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.assess-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --- Policies --- */
+.policy-block {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 16px;
+}
+.policy-block h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.policy-block p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.policy-block + .policy-block { margin-top: 16px; }
+
+/* --- Callout --- */
+.callout {
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+.callout.green {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  color: #0f3d2e;
+}
+.callout.teal {
+  background: var(--teal-light);
+  border-left: 4px solid var(--teal);
+  color: #0a4f4f;
+}
+.callout.gold {
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  color: #6b5900;
+}
+.callout strong { font-weight: 600; }
+
+/* --- Info Table --- */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+.info-table th, .info-table td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--border-light);
+}
+.info-table th {
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 180px;
+}
+.info-table td {
+  color: var(--text-muted);
+}
+
+/* --- Footer --- */
+.footer {
+  background: #1a1a1a;
+  color: rgba(255,255,255,0.5);
+  padding: 40px 32px;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 80px;
+}
+.footer a { color: rgba(255,255,255,0.7); }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero-inner { padding: 40px 20px 36px; }
+  .hero-meta { gap: 16px; flex-direction: column; }
+  .main { padding: 0 20px; }
+  .content-grid { grid-template-columns: 1fr; }
+  .week-item { grid-template-columns: 48px 1fr; }
+  .week-ds { grid-column: 2; margin-top: -4px; }
+  .instructor-card { flex-direction: column; gap: 20px; }
+  .keyfacts-inner { grid-template-columns: 1fr 1fr; }
+  .keyfact { border-bottom: 1px solid var(--border-light); }
+  .nav-tab { padding: 12px 14px; font-size: 13px; }
+  .assess-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .keyfacts-inner { grid-template-columns: 1fr; }
+  .assess-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Print --- */
+@media print {
+  .nav-tabs-wrap { display: none; }
+  .section { display: block !important; page-break-inside: avoid; }
+  .hero { background: #0f5132 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      February — June 2026
+    </div>
+    <h1>
+      <span>ENV3210 · 4 Credits</span>
+      Aquatic Sciences
+    </h1>
+    <p class="hero-subtitle">
+      An integrated exploration of the physical, chemical, biological, and ecological dimensions of inland waters — with Guyana's freshwater systems as the primary context.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        Saturdays · 10:15 AM — 1:10 PM (GYT) · 13 weeks
+      </div>
+      <div class="hero-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" /></svg>
+        <a href="https://us02web.zoom.us/j/86882086910?pwd=Akan9qqcGowDZgLl3BBuotr8z8Xxlm.1" style="color:white;text-decoration:underline;text-underline-offset:3px;">Join on Zoom</a>
+      </div>
+      <div class="hero-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" /></svg>
+        Faculty of Earth &amp; Environmental Sciences
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====== KEY FACTS ====== -->
+<div class="keyfacts">
+  <div class="keyfacts-inner">
+    <div class="keyfact">
+      <div class="keyfact-label">Course Code</div>
+      <div class="keyfact-value">ENV3210</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Credits</div>
+      <div class="keyfact-value">4</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Level</div>
+      <div class="keyfact-value">Year 3</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Course ID</div>
+      <div class="keyfact-value">4871</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Delivery</div>
+      <div class="keyfact-value">Online (Zoom)</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">LMS</div>
+      <div class="keyfact-value">Moodle</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== NAV TABS ====== -->
+<nav class="nav-tabs-wrap">
+  <div class="nav-tabs">
+    <a class="nav-tab active" data-target="overview">Overview</a>
+    <a class="nav-tab" data-target="curriculum">Curriculum</a>
+    <a class="nav-tab" data-target="data-science">Data Science Track</a>
+    <a class="nav-tab" data-target="assessment">Assessment</a>
+    <a class="nav-tab" data-target="policies">Policies</a>
+    <a class="nav-tab" data-target="resources">Resources</a>
+  </div>
+</nav>
+
+<!-- ====== CONTENT ====== -->
+<main class="main">
+
+  <!-- ===== OVERVIEW ===== -->
+  <div id="overview" class="section active">
+    <h2 class="section-title">Course Overview</h2>
+    <p class="section-lead">
+      Limnology sits at the intersection of hydrology, aquatic chemistry, ecology, and environmental policy. This course develops your ability to think across those fields simultaneously — because you cannot understand a lake or a river by looking at its biology alone, or its chemistry alone, or its physics alone.
+    </p>
+
+    <div class="callout green">
+      <strong>A Guyana-first approach.</strong> This course prioritises local freshwater systems and tropical examples while incorporating canonical temperate frameworks with explicit translation moments. The field of limnology has a well-documented temperate bias — your career will be spent working in tropical systems, and the transferability of temperate frameworks cannot be assumed.
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--accent-light);color:var(--accent);">🔬</span> Interdisciplinary Integration</h3>
+        <p>Every week connects chemistry, biology, physics, and policy. This is not a sequence of isolated topics — it's a system-level perspective where each concept builds on and connects to the others.</p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">💻</span> Embedded Data Science</h3>
+        <p>A 30-minute data science module follows each lecture, teaching R programming and data analysis using that week's freshwater data. By Week 13, you'll be a data-literate freshwater scientist.</p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--gold-light);color:var(--gold);">🌍</span> Tropical Frontiers</h3>
+        <p>Research gaps in tropical freshwater science represent extraordinary opportunities. Where temperate frameworks fail to transfer, you'll learn to recognise the gap and frame the research question.</p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:#f3e8ff;color:#7c3aed;">🎯</span> Interpretation Over Memorisation</h3>
+        <p>You will never be asked to recite a definition. The focus is on interpreting data, evaluating management scenarios, diagnosing system conditions, and explaining ecological mechanisms.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:16px;">Four Threads</h3>
+    <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:32px;">
+      Four themes recur every week and form the connective tissue of the course. You'll encounter them in every lecture, every discussion, and every assessment.
+    </p>
+    <div class="content-grid">
+      <div class="content-card" style="border-left:3px solid var(--accent);">
+        <h3>Connectivity</h3>
+        <p>Longitudinal, lateral, vertical, and temporal. Disrupting any dimension cascades through the system.</p>
+      </div>
+      <div class="content-card" style="border-left:3px solid var(--teal);">
+        <h3>Scale</h3>
+        <p>Molecular to global. Moving fluently between spatial and temporal scales is a core limnological skill.</p>
+      </div>
+      <div class="content-card" style="border-left:3px solid var(--gold);">
+        <h3>Human Impact</h3>
+        <p>No pristine system remains. The Anthropocene is the operating context for all freshwater science.</p>
+      </div>
+      <div class="content-card" style="border-left:3px solid #7c3aed;">
+        <h3>Tropical Frontiers</h3>
+        <p>The temperate bias in freshwater science is real. The research need is acute, and the systems are at your doorstep.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:16px;">Weekly Class Structure</h3>
+    <div class="callout teal">
+      <strong>Every Saturday · 10:15 AM — 1:10 PM (Guyana Time)</strong><br>
+      <a href="https://us02web.zoom.us/j/86882086910?pwd=Akan9qqcGowDZgLl3BBuotr8z8Xxlm.1" style="color:#0a4f4f;font-weight:600;">Join Zoom Meeting →</a>
+    </div>
+    <table class="info-table">
+      <tr><th>10:15 — 11:45</th><td>Core Lecture — 90 minutes of limnology theory, interactive discussions, and Guyanese case studies</td></tr>
+      <tr><th>11:45 — 12:15</th><td>Break — 30 minutes</td></tr>
+      <tr><th>12:15 — 12:45</th><td>Data Science Module — 30 minutes of R programming and data analysis using that week's freshwater data</td></tr>
+      <tr><th>12:45 — 1:10</th><td>Buffer — breathing room and wrap-up</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== CURRICULUM ===== -->
+  <div id="curriculum" class="section">
+    <h2 class="section-title">13-Week Curriculum</h2>
+    <p class="section-lead">
+      The course progresses from foundations through habitat ecology to applied topics and synthesis. Each week builds on what came before — this is an integrated arc, not a collection of standalone lectures.
+    </p>
+
+    <!-- Phase 1 -->
+    <div class="phase-header">
+      <span class="phase-tag foundations">Weeks 1–4</span>
+      <span class="phase-title">Foundations</span>
+    </div>
+    <div class="week-list" id="phase1">
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">01</span>
+        <span class="week-lecture">Why Freshwater Matters</span>
+        <span class="week-ds">What Is Environmental Data Science?</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Global freshwater distribution (0.007%), ecosystem services ($125T/yr), Guyana's freshwater assets (Rupununi Portal, EDWC), the 84% decline in freshwater vertebrate populations (Living Planet Index), and the field of limnology as an integrative discipline.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Orientation to reproducibility, FAIR data principles, why R. Conceptual — no coding required.</span></div>
+        <div class="detail-row"><span class="detail-label">Key Refs</span><span>Wetzel (2001), Shiklomanov (1993), WWF Living Planet Report (2024), Costanza et al. (2014)</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">02</span>
+        <span class="week-lecture">How Water Works</span>
+        <span class="week-ds">Reading &amp; Interpreting Data Visualisations</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Hydrologic cycle, watershed concept, physical and chemical properties of water (hydrogen bonding, density anomaly, thermal capacity), key parameters: pH, dissolved oxygen, conductivity, alkalinity.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Graph literacy: reading axes, scales, distributions. "What story does this figure tell?" Conceptual — no coding required.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">03</span>
+        <span class="week-lecture">Rivers &amp; Streams</span>
+        <span class="week-ds">R Bootcamp Part 1: Getting Data In</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Lotic systems, River Continuum Concept (Vannote et al. 1980), flow regimes, longitudinal connectivity, flood pulse concept, Guyana's whitewater/blackwater/clearwater classification (Sioli 1984).</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>First R contact: <code>read_csv()</code>, <code>head()</code>, <code>summary()</code>, <code>str()</code>, understanding data frames. Guided coding with interactive webR cells.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">04</span>
+        <span class="week-lecture">Lakes &amp; Reservoirs</span>
+        <span class="week-ds">R Bootcamp Part 2: Tidyverse Essentials</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Lentic systems, lake origins and morphometry, thermal stratification and mixing regimes, redox chemistry, trophic classification (Carlson TSI), tropical lake behaviour, reservoirs vs. natural lakes.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span><code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>group_by()</code>, <code>summarize()</code>, the pipe operator. Guided coding.</span></div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-header">
+      <span class="phase-tag core">Weeks 5–8</span>
+      <span class="phase-title">Core Skills</span>
+    </div>
+    <div class="week-list" id="phase2">
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">05</span>
+        <span class="week-lecture">Nutrients &amp; Eutrophication</span>
+        <span class="week-ds">Visualisation with ggplot2</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Phosphorus and nitrogen cycling, Redfield ratio, Vollenweider models, Schindler's whole-lake experiments, cyanobacterial blooms, regime shifts (Scheffer), internal loading, eutrophication risks in Guyana's EDWC.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Grammar of graphics: <code>ggplot()</code>, aesthetic mapping, geoms, facets, themes. Visualising nutrient data. Guided coding.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">06</span>
+        <span class="week-lecture">Wetlands &amp; Estuaries</span>
+        <span class="week-ds">Exploratory Data Analysis</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Wetland classification (Ramsar, Cowardin), biogeochemistry of saturated soils, nutrient processing, Guyana's Rupununi wetlands, estuarine mixing and salinity gradients, mangrove ecosystems.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Distributions, outliers, correlations, <code>pairs()</code> plots, summary statistics. Exploratory analysis of wetland water chemistry data.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">07</span>
+        <span class="week-lecture">Plankton &amp; Biodiversity</span>
+        <span class="week-ds">Introduction to Multivariate Thinking</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Phytoplankton and zooplankton ecology, size-efficiency hypothesis, trophic cascades, PEG model, tropical plankton dynamics, biodiversity patterns in Guyana's freshwaters.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>PCA with <code>vegan::rda()</code>, biplots, eigenvalues, interpretation of ordination. Analytical tier — applying methods to plankton community data.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">08</span>
+        <span class="week-lecture">Bioassessment &amp; Monitoring</span>
+        <span class="week-ds">Constrained Ordination &amp; Hypothesis Testing</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Biotic indices (BMWP, FBI, IBI), reference condition approach, diatom-based assessment, water quality indices, eDNA, regulatory frameworks (EU WFD, US CWA), bioassessment gaps in Guyana.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>RDA, <code>anova.cca()</code>, PERMANOVA with <code>adonis2()</code>. Testing environmental drivers of community structure. Analytical tier.</span></div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-header">
+      <span class="phase-tag applied">Weeks 9–11</span>
+      <span class="phase-title">Applied Methods &amp; Frontiers</span>
+    </div>
+    <div class="week-list" id="phase3">
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">09</span>
+        <span class="week-lecture">Pollution I: Visible</span>
+        <span class="week-ds">Spatial Data &amp; Mapping</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Mining waste, mercury from ASGM, sediment loading, acid mine drainage, point vs. diffuse sources, environmental fate and transport, Minamata Convention, mercury contamination in Guyana's interior rivers.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span><code>sf</code> package basics, plotting sampling sites on maps, choropleth visualisation of mercury concentrations. Static code blocks (sf has webR limitations).</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">10</span>
+        <span class="week-lecture">Pollution II: Invisible</span>
+        <span class="week-ds">Introduction to Machine Learning</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Microplastics, pharmaceuticals, endocrine disruptors, PFAS, emerging contaminants, chronic mixture effects, parts-per-trillion detection, risk assessment frameworks.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Decision trees, Random Forest, feature importance plots. "Which water quality parameters best predict contamination classification?" Analytical tier.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">11</span>
+        <span class="week-lecture">Water Governance</span>
+        <span class="week-ds">Data for Decision-Making</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Water law doctrines, environmental flows (Poff et al. 1997), Ontario PTTW case study, Walkerton disaster, EU WFD, Guyana's Water and Sewerage Act 2002, the science→regulation pipeline.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Sensor → database → compliance workflow, data infrastructure as governance tool, FAIR data principles revisited. Conceptual tier.</span></div>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase-header">
+      <span class="phase-tag synthesis">Weeks 12–13</span>
+      <span class="phase-title">Frontiers &amp; Synthesis</span>
+    </div>
+    <div class="week-list" id="phase4">
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">12</span>
+        <span class="week-lecture">Climate Change &amp; Freshwater</span>
+        <span class="week-ds">Remote Sensing &amp; Big Data</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Thermal regime shifts, altered hydrology, salinisation of coastal systems, phenological mismatches, climate projections for Guyana, adaptation strategies for freshwater management.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>Google Earth Engine, Sentinel-2, AquaSat, IoT sensors. Awareness of tools and data sources — no coding required.</span></div>
+      </div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-num">13</span>
+        <span class="week-lecture">Future of Freshwater Science</span>
+        <span class="week-ds">The Data-Literate Freshwater Scientist</span>
+      </div>
+      <div class="week-detail">
+        <div class="detail-row"><span class="detail-label">Lecture</span><span>Where the field is heading: eDNA, autonomous monitoring, AI/ML applications, the Global Lake Ecological Observatory Network, career paths in freshwater science, Guyana's unique research opportunities.</span></div>
+        <div class="detail-row"><span class="detail-label">Data Science</span><span>eDNA bioinformatics pipelines (awareness), AI/ML frontiers in freshwater science, career paths, resources for continued learning. Synthesis.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DATA SCIENCE TRACK ===== -->
+  <div id="data-science" class="section">
+    <h2 class="section-title">Data Science Track</h2>
+    <p class="section-lead">
+      "Data Thinking for Freshwater Scientists" — a 30-minute applied data science module delivered each week after the core lecture, building R programming skills using that week's freshwater data.
+    </p>
+
+    <div class="callout teal">
+      <strong>Interactive, browser-based R.</strong> The data science modules are delivered as Quarto HTML documents with webR — R compiled to WebAssembly that runs directly in your browser. No installation required. You can edit and run code on any device with a modern web browser.
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">📊</span> Three Tiers of Engagement</h3>
+        <p style="margin-bottom:16px;">Not every week requires coding. The modules scale in complexity across the semester:</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--bg-alt);border-radius:8px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f0eb;color:var(--accent);font-size:13px;font-weight:700;flex-shrink:0;">1</span>
+            <div><strong style="font-size:0.88rem;">Conceptual</strong> <span style="font-size:0.82rem;color:var(--text-light);">· Weeks 1–2, 11–13</span><br><span style="font-size:0.85rem;color:var(--text-muted);">Read, discuss, and interpret pre-rendered output. No coding required.</span></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--bg-alt);border-radius:8px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--teal-light);color:var(--teal);font-size:13px;font-weight:700;flex-shrink:0;">2</span>
+            <div><strong style="font-size:0.88rem;">Guided Coding</strong> <span style="font-size:0.82rem;color:var(--text-light);">· Weeks 3–6</span><br><span style="font-size:0.85rem;color:var(--text-muted);">Run provided code, modify parameters, and observe what changes.</span></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--bg-alt);border-radius:8px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--gold-light);color:var(--gold);font-size:13px;font-weight:700;flex-shrink:0;">3</span>
+            <div><strong style="font-size:0.88rem;">Analytical</strong> <span style="font-size:0.82rem;color:var(--text-light);">· Weeks 7–10</span><br><span style="font-size:0.85rem;color:var(--text-muted);">Apply methods to datasets, interpret output, and make decisions.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">🔗</span> Integrated With the Lecture</h3>
+        <p>Every module uses data from that week's limnology topic. Week 5 covers eutrophication in the lecture and ggplot2 visualisation using nutrient data in the module. The data science is never disconnected from the science.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:16px;">Skill Progression</h3>
+    <table class="info-table">
+      <tr><th>Week 3</th><td>Loading and inspecting data — <code>read_csv()</code>, <code>summary()</code>, data frames</td></tr>
+      <tr><th>Week 4</th><td>Data wrangling — <code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>group_by()</code>, pipes</td></tr>
+      <tr><th>Week 5</th><td>Visualisation — <code>ggplot2</code> grammar of graphics, aesthetics, geoms, facets</td></tr>
+      <tr><th>Week 6</th><td>Exploratory analysis — distributions, outliers, correlations</td></tr>
+      <tr><th>Week 7</th><td>Multivariate — PCA with <code>vegan</code>, biplots, ordination interpretation</td></tr>
+      <tr><th>Week 8</th><td>Hypothesis testing — RDA, PERMANOVA, constrained ordination</td></tr>
+      <tr><th>Week 9</th><td>Spatial — <code>sf</code> package, mapping sampling sites, choropleth</td></tr>
+      <tr><th>Week 10</th><td>Machine learning — decision trees, Random Forest, feature importance</td></tr>
+    </table>
+
+    <div class="callout gold">
+      <strong>No local R installation required.</strong> All modules run in the browser via webR. If you have R/RStudio installed locally and prefer to use it, that's fine — but it's not necessary. The HTML modules work on laptops, tablets, and phones.
+    </div>
+  </div>
+
+  <!-- ===== ASSESSMENT ===== -->
+  <div id="assessment" class="section">
+    <h2 class="section-title">Assessment</h2>
+    <p class="section-lead">
+      Assessment is designed to test interpretation, not memorisation. You'll be evaluated on your ability to integrate concepts, analyse data, and apply freshwater science to real-world contexts.
+    </p>
+
+    <div class="callout green">
+      <strong>Open-book midterm.</strong> The midterm is a take-home, open-book assessment. You may use lecture materials, data science modules, and your own notes. The questions are designed so that having access to materials doesn't make them easy — they require synthesis and application, not lookup.
+    </div>
+
+    <div class="assess-grid">
+      <div class="assess-card a3">
+        <div class="assess-weight">60%</div>
+        <div class="assess-name">Final Exam*</div>
+        <div class="assess-desc">Comprehensive examination covering all 13 weeks. Multiple choice and true/false format — but designed to test interpretation and application, not recall. See sample question below.</div>
+      </div>
+      <div class="assess-card a1">
+        <div class="assess-weight">20%</div>
+        <div class="assess-name">Midterm Assessment</div>
+        <div class="assess-desc">Open-book take-home assessment covering Weeks 1–7. Expect data interpretation, diagram analysis, and short-answer questions requiring integration of concepts.</div>
+      </div>
+      <div class="assess-card a2">
+        <div class="assess-weight">10%</div>
+        <div class="assess-name">Data Science Assignment</div>
+        <div class="assess-desc">A practical R-based assignment applying data wrangling, visualisation, and analysis skills to a freshwater dataset. Details provided on Moodle.</div>
+      </div>
+      <div class="assess-card a4">
+        <div class="assess-weight">10%</div>
+        <div class="assess-name">Student Presentation</div>
+        <div class="assess-desc">An individual or group presentation on a freshwater science topic relevant to Guyana. Rubric and topic selection guidance provided by mid-semester.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:28px;margin-bottom:32px;">
+      <h3 style="font-size:1rem;font-weight:600;margin-bottom:16px;">*Sample Final Exam Question</h3>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;font-style:italic;">All the information you need to answer this question is provided below. You do not need to have memorised anything.</p>
+      <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">
+        <strong>Study the temperature and dissolved oxygen (DO) depth profiles for Lake X, sampled in July:</strong>
+      </p>
+      <div style="background:var(--bg-alt);border-radius:8px;padding:16px 20px;margin-bottom:16px;font-family:var(--font-mono);font-size:0.82rem;line-height:1.8;color:var(--text-muted);">
+        Depth (m) &nbsp;|&nbsp; Temp (°C) &nbsp;|&nbsp; DO (mg/L)<br>
+        ─────────┼───────────┼──────────<br>
+        &nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 29.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 7.8<br>
+        &nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 28.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 7.5<br>
+        &nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 27.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 6.2<br>
+        &nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 22.4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 1.1<br>
+        &nbsp;&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 21.8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 0.3<br>
+        &nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 21.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 0.1
+      </div>
+      <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:12px;">
+        <strong>The lake manager tells you: "We cut phosphorus inputs by 50% two years ago, but algal blooms are still just as bad. The phosphorus reduction clearly didn't work."</strong>
+      </p>
+      <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:8px;">
+        Based on the data above, which response best evaluates the manager's conclusion?
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.8;margin-bottom:8px;">
+        (a) The manager is correct — if phosphorus was reduced and blooms persist, phosphorus is not the limiting nutrient in this lake.<br>
+        (b) The data shows the deep water has almost no oxygen. Under these conditions, phosphorus bound in bottom sediments can be released back into the water column, fuelling blooms even without external inputs — so the manager's conclusion is premature.<br>
+        (c) The temperature data shows the lake is too warm for the phosphorus reduction to be effective.<br>
+        (d) Two years is too short to evaluate any nutrient management intervention, regardless of the lake's conditions.
+      </p>
+      <p style="font-size:0.85rem;color:var(--accent);font-weight:500;margin-top:12px;">
+        Answer: (b). Notice you didn't need to memorise anything — the data table gives you the evidence, and the answer options walk you through the reasoning. You just need to connect the pattern (low DO at depth) to the consequence (sediment phosphorus release) to evaluate the manager's claim. That's the kind of thinking this exam tests.
+      </p>
+    </div>
+
+    <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">
+      Every exam question provides the data, scenario, or diagram you need to reason through the answer. You are not expected to memorise numbers, definitions, or terminology — you are expected to <em>interpret</em> information, <em>connect</em> patterns, and <em>evaluate</em> claims. The questions are written at the application and analysis levels of Bloom's Taxonomy: they give you a situation you haven't seen before and ask you to work through it using the concepts from the course.
+    </p>
+    <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">
+      True/false questions follow the same principle — they present a statement embedded in a scenario and ask you to judge whether the reasoning is sound, not whether you recall a fact.
+    </p>
+  </div>
+
+  <!-- ===== RESOURCES ===== -->
+  <div id="resources" class="section">
+    <h2 class="section-title">Resources</h2>
+    <p class="section-lead">
+      Curated resources to support your learning — from R programming to freshwater science podcasts. None of these are required, but all are recommended.
+    </p>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:16px;">Learning R</h3>
+    <div class="content-grid">
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">📖</span> R for Data Science (2e)</h3>
+        <p>The definitive free online textbook by Hadley Wickham, Mine Çetinkaya-Rundel &amp; Garrett Grolemund. Covers the entire tidyverse workflow: import, tidy, transform, visualise, model, communicate. This is your primary R reference for this course.<br><a href="https://r4ds.hadley.nz" style="color:var(--teal);font-weight:500;">r4ds.hadley.nz →</a></p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">🎓</span> Coding Club — Data Science for Ecologists</h3>
+        <p>Free, self-paced R tutorials from the University of Edinburgh. Designed specifically for ecology and environmental science students — the examples use ecological data and the pace is beginner-friendly. Earn a certificate.<br><a href="https://ourcodingclub.github.io/course.html" style="color:var(--teal);font-weight:500;">ourcodingclub.github.io →</a></p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">🔧</span> Data Carpentry — R for Ecology</h3>
+        <p>A structured one-day lesson covering R basics, data manipulation with dplyr, and visualisation with ggplot2 — all using ecological datasets. Redesigned in 2024. Excellent for absolute beginners.<br><a href="https://datacarpentry.github.io/R-ecology-lesson/" style="color:var(--teal);font-weight:500;">datacarpentry.github.io →</a></p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--teal-light);color:var(--teal);">💧</span> IHE Delft — Open Courseware</h3>
+        <p>Free self-study courses from the UN's water education institute, covering hydrology, water resources management, environmental flows, and water quality. Designed for water professionals in developing countries — directly relevant to Weeks 2, 3, 11, and 12.<br><a href="https://ocw.un-ihe.org" style="color:var(--teal);font-weight:500;">ocw.un-ihe.org →</a></p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin:40px 0 16px;">Podcasts &amp; Audio</h3>
+    <div class="content-grid">
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--accent-light);color:var(--accent);">🎙️</span> Core Ideas Podcast</h3>
+        <p>Hosted by Adam Jeziorski — an excellent paleolimnology and freshwater science resource. Episodes cover lake sediment records, diatom analysis, cladoceran ecology, and environmental reconstruction. Directly relevant to Weeks 4, 7, and 8.<br><a href="https://ajeziorski.ca/podcast/all-episodes/" style="color:var(--accent);font-weight:500;">ajeziorski.ca/podcast →</a></p>
+      </div>
+      <div class="content-card">
+        <h3><span class="icon" style="background:var(--accent-light);color:var(--accent);">🌊</span> Making Waves — SFS Podcast</h3>
+        <p>Produced by the Society for Freshwater Science. Short interviews with researchers covering biodiversity, eutrophication, river conservation, tropical ecology, and freshwater science careers. Great for hearing how real scientists think about the topics we cover.<br><a href="https://freshwater-science.org/education-outreach/making-waves" style="color:var(--accent);font-weight:500;">freshwater-science.org →</a></p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin:40px 0 16px;">Reference Texts &amp; Open Resources</h3>
+    <table class="info-table">
+      <tr><th>Wetzel (2001)</th><td><em>Limnology: Lake and River Ecosystems</em>, 3rd Ed. The standard reference text. Comprehensive but temperate-focused — the lectures provide the tropical context the textbook lacks. Not required.</td></tr>
+      <tr><th>vegan package</th><td>Oksanen et al. — the core R package for community ecology ordination and diversity analysis. Used in Weeks 7–8. Documentation at <a href="https://cran.r-project.org/package=vegan" style="color:var(--accent);">CRAN</a>.</td></tr>
+      <tr><th>GLEON</th><td>The Global Lake Ecological Observatory Network — a worldwide network of instrumented lakes producing open data. Relevant to Weeks 8, 12, and 13. <a href="https://gleon.org" style="color:var(--accent);">gleon.org</a></td></tr>
+      <tr><th>ASLO</th><td>The Association for the Sciences of Limnology and Oceanography — the main professional society for the field. Their "What is Limnology?" page is a good overview. <a href="https://www.aslo.org/what-is-aquatic-science/what-is-limnology/" style="color:var(--accent);">aslo.org</a></td></tr>
+    </table>
+  </div>
+
+  <!-- ===== POLICIES ===== -->
+  <div id="policies" class="section">
+    <h2 class="section-title">Course Policies</h2>
+    <p class="section-lead">
+      How the course operates, what's expected, and where to find support.
+    </p>
+
+    <div class="policy-block">
+      <h3>Attendance &amp; Participation</h3>
+      <p>This is a synchronous online course delivered via Zoom every Saturday. Regular attendance is expected. If you cannot attend a session, contact the instructor in advance. Recordings may be made available on Moodle, but they are not a substitute for live participation — breakout room discussions, chat interactions, and real-time data science exercises are integral to the learning experience.</p>
+    </div>
+
+    <div class="policy-block">
+      <h3>Academic Integrity</h3>
+      <p>All submitted work must be your own. For data science assignments, you may discuss approaches with classmates, but the code and interpretation you submit must be individually written. Plagiarism, fabrication of data, and misrepresentation of authorship are violations of the University of Guyana's academic integrity policies and will be treated seriously. When in doubt, cite your sources and ask the instructor.</p>
+    </div>
+
+    <div class="policy-block" style="border-left:3px solid var(--teal);">
+      <h3>Use of Artificial Intelligence</h3>
+      <p>AI tools (such as ChatGPT, Claude, Gemini, GitHub Copilot, and others) are permitted in this course for assignments — particularly for coding assistance in the data science component. AI is a modern tool increasingly used within environmental science and data analysis, and learning to use it effectively is a genuine professional skill.</p>
+      <p style="margin-top:12px;">However, AI is a <strong>tool, not a replacement</strong> for your own understanding. Its use is permitted only with full honesty, transparency, and critical engagement. Specifically, if you use any AI tool in any submitted work, you must disclose:</p>
+      <p style="margin-top:12px;">
+        <strong>1.</strong> That you used AI assistance.<br>
+        <strong>2.</strong> Which tool and specific model you used (e.g., "Claude Sonnet 4", "ChatGPT-4o", "GitHub Copilot").<br>
+        <strong>3.</strong> The specific prompt(s) you provided, or a clear summary of what you asked the AI to do.
+      </p>
+      <p style="margin-top:12px;">Undisclosed use of AI constitutes academic dishonesty and will be treated as such. I will be checking all submitted code for correctness, functionality, and syntactic accuracy — AI-generated code that does not work, that you cannot explain, or that you submit without disclosure will not receive credit. The goal is not to catch you out — it is to ensure that you are learning. AI can accelerate your learning if you engage with its output critically. It will undermine your learning if you treat it as a shortcut past understanding.</p>
+    </div>
+
+    <div class="policy-block">
+      <h3>Technology Requirements</h3>
+      <p>You need a device with a modern web browser (Chrome, Firefox, Edge, or Safari), a stable internet connection for Zoom, and access to Moodle. R and RStudio are <strong>not</strong> required — the data science modules run in the browser via webR. If you have R installed locally and prefer to use it, that's fine. A webcam and microphone are expected for Zoom sessions.</p>
+    </div>
+
+    <div class="policy-block">
+      <h3>Late Submissions</h3>
+      <p>Late work will be penalised at a rate to be confirmed in Week 1. Extensions may be granted for documented circumstances — contact the instructor <em>before</em> the deadline. Technical issues (internet outages, device problems) are understandable given the online delivery context and will be handled with flexibility if communicated promptly.</p>
+    </div>
+
+    <div class="policy-block">
+      <h3>Recommended Textbook</h3>
+      <p>There is no required textbook. All essential material is covered in the lectures, data science modules, and supplementary readings posted on Moodle. For students who want a reference text, <strong>Wetzel, R.G. (2001). <em>Limnology: Lake and River Ecosystems</em>, 3rd Edition. Academic Press</strong> is the standard reference in the field. It is comprehensive but temperate-focused — the lectures provide the tropical context that the textbook lacks.</p>
+    </div>
+
+    <div class="policy-block">
+      <h3>Accessibility &amp; Accommodations</h3>
+      <p>If you require accommodations for a disability or other circumstance, please contact the instructor as early as possible. Lecture materials (slides, transcripts, data science HTML modules) are designed to be accessible across devices and connectivity levels. All interactive content has static fallbacks.</p>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:1.25rem;margin:40px 0 16px;">Key Links</h3>
+    <table class="info-table">
+      <tr><th>Moodle</th><td>Weekly lecture slides, data science modules, readings, assignment submissions, announcements</td></tr>
+      <tr><th>Zoom</th><td><a href="https://us02web.zoom.us/j/86882086910?pwd=Akan9qqcGowDZgLl3BBuotr8z8Xxlm.1" style="color:var(--accent);font-weight:500;">Join Meeting</a> · Saturdays, 10:15 AM — 1:10 PM GYT</td></tr>
+    </table>
+  </div>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <p>ENV3210 Aquatic Sciences · University of Guyana · Faculty of Earth &amp; Environmental Sciences</p>
+  <p style="margin-top:8px;">Course materials &copy; 2026 Ajay Persaud. All rights reserved.</p>
+</footer>
+
+<script>
+// Tab navigation
+const tabs = document.querySelectorAll('.nav-tab');
+const sections = document.querySelectorAll('.section');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.target;
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    sections.forEach(s => {
+      s.classList.remove('active');
+      if (s.id === target) s.classList.add('active');
+    });
+    window.scrollTo({ top: document.querySelector('.nav-tabs-wrap').offsetTop, behavior: 'smooth' });
+  });
+});
+
+// Week expansion
+function toggleWeek(el) {
+  const detail = el.nextElementSibling;
+  const wasExpanded = el.classList.contains('expanded');
+
+  // Close all
+  document.querySelectorAll('.week-item.expanded').forEach(w => w.classList.remove('expanded'));
+  document.querySelectorAll('.week-detail.expanded').forEach(d => d.classList.remove('expanded'));
+
+  if (!wasExpanded) {
+    el.classList.add('expanded');
+    detail.classList.add('expanded');
+  }
+}
+</script>
+</body>
+</html>
