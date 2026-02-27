@@ -1,0 +1,71 @@
+---
+title: "Resources"
+toc: false
+---
+
+```{=html}
+<p class="section-lead">
+  Curated resources to support your learning — from R programming to freshwater science podcasts. None are required, but all are recommended.
+</p>
+
+<h3>Learning R</h3>
+<div class="content-grid">
+  <div class="content-card">
+    <h3>R for Data Science (2e)</h3>
+    <p>The definitive free online textbook by Hadley Wickham, Mine Cetinkaya-Rundel &amp; Garrett Grolemund. Covers the entire tidyverse workflow: import, tidy, transform, visualise, model, communicate. Your primary R reference for this course.</p>
+    <p style="margin-top:12px;"><a href="https://r4ds.hadley.nz" style="color:var(--teal);">r4ds.hadley.nz &rarr;</a></p>
+  </div>
+  <div class="content-card">
+    <h3>Coding Club — Data Science for Ecologists</h3>
+    <p>Free, self-paced R tutorials from the University of Edinburgh. Designed for ecology and environmental science students — the examples use ecological data and the pace is beginner-friendly.</p>
+    <p style="margin-top:12px;"><a href="https://ourcodingclub.github.io/course.html" style="color:var(--teal);">ourcodingclub.github.io &rarr;</a></p>
+  </div>
+  <div class="content-card">
+    <h3>Data Carpentry — R for Ecology</h3>
+    <p>A structured one-day lesson covering R basics, data manipulation with dplyr, and visualisation with ggplot2 — all using ecological datasets. Excellent for absolute beginners.</p>
+    <p style="margin-top:12px;"><a href="https://datacarpentry.github.io/R-ecology-lesson/" style="color:var(--teal);">datacarpentry.github.io &rarr;</a></p>
+  </div>
+  <div class="content-card">
+    <h3>IHE Delft — Open Courseware</h3>
+    <p>Free self-study courses from the UN's water education institute, covering hydrology, water resources management, environmental flows, and water quality. Directly relevant to Weeks 2, 3, 11, and 12.</p>
+    <p style="margin-top:12px;"><a href="https://ocw.un-ihe.org" style="color:var(--teal);">ocw.un-ihe.org &rarr;</a></p>
+  </div>
+</div>
+
+<h3>Podcasts &amp; Audio</h3>
+<div class="content-grid">
+  <div class="content-card">
+    <h3>Core Ideas Podcast</h3>
+    <p>Hosted by Adam Jeziorski — an excellent paleolimnology and freshwater science resource. Episodes cover lake sediment records, diatom analysis, cladoceran ecology, and environmental reconstruction. Directly relevant to Weeks 4, 7, and 8.</p>
+    <p style="margin-top:12px;"><a href="https://ajeziorski.ca/podcast/all-episodes/" style="color:var(--accent);">ajeziorski.ca/podcast &rarr;</a></p>
+  </div>
+  <div class="content-card">
+    <h3>Making Waves — SFS Podcast</h3>
+    <p>Produced by the Society for Freshwater Science. Short interviews with researchers covering biodiversity, eutrophication, river conservation, tropical ecology, and freshwater science careers.</p>
+    <p style="margin-top:12px;"><a href="https://freshwater-science.org/education-outreach/making-waves" style="color:var(--accent);">freshwater-science.org &rarr;</a></p>
+  </div>
+</div>
+
+<h3>Reference Texts &amp; Open Resources</h3>
+<div class="content-grid">
+  <div class="content-card">
+    <h3>Wetzel (2001)</h3>
+    <p><em>Limnology: Lake and River Ecosystems</em>, 3rd Edition. The standard reference text in the field. Comprehensive but temperate-focused — the lectures provide the tropical context the textbook lacks. Not required.</p>
+  </div>
+  <div class="content-card">
+    <h3>vegan R Package</h3>
+    <p>Oksanen et al. — the core R package for community ecology ordination and diversity analysis. Used in Weeks 7–8.</p>
+    <p style="margin-top:12px;"><a href="https://cran.r-project.org/package=vegan" style="color:var(--accent);">CRAN documentation &rarr;</a></p>
+  </div>
+  <div class="content-card">
+    <h3>GLEON</h3>
+    <p>The Global Lake Ecological Observatory Network — a worldwide network of instrumented lakes producing open data. Relevant to Weeks 8, 12, and 13.</p>
+    <p style="margin-top:12px;"><a href="https://gleon.org" style="color:var(--accent);">gleon.org &rarr;</a></p>
+  </div>
+  <div class="content-card">
+    <h3>ASLO</h3>
+    <p>The Association for the Sciences of Limnology and Oceanography — the main professional society for the field.</p>
+    <p style="margin-top:12px;"><a href="https://www.aslo.org/what-is-aquatic-science/what-is-limnology/" style="color:var(--accent);">What is Limnology? &rarr;</a></p>
+  </div>
+</div>
+```

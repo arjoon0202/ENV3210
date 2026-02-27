@@ -1,0 +1,107 @@
+---
+pagetitle: "ENV3210 — Aquatic Sciences"
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      February — June 2026
+    </div>
+    <h1>
+      <span class="overline">ENV3210 · University of Guyana</span>
+      Aquatic Sciences
+    </h1>
+    <p class="hero-subtitle">
+      An integrated exploration of the physical, chemical, biological, and ecological dimensions of inland waters — with Guyana's freshwater systems as the primary context.
+    </p>
+    <div class="hero-meta">
+      <div>Saturdays · 10:15 AM — 1:10 PM (GYT)</div>
+      <div><a href="https://us02web.zoom.us/j/86882086910?pwd=Akan9qqcGowDZgLl3BBuotr8z8Xxlm.1">Join on Zoom</a></div>
+      <div>Faculty of Earth &amp; Environmental Sciences</div>
+      <div>13 Weeks · 4 Credits</div>
+    </div>
+  </div>
+</div>
+
+<div class="keyfacts">
+  <div class="keyfacts-inner">
+    <div class="keyfact">
+      <div class="keyfact-label">Course Code</div>
+      <div class="keyfact-value">ENV3210</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Delivery</div>
+      <div class="keyfact-value">Online (Zoom)</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Schedule</div>
+      <div class="keyfact-value">Saturdays</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Duration</div>
+      <div class="keyfact-value">13 Weeks</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Credits</div>
+      <div class="keyfact-value">4</div>
+    </div>
+    <div class="keyfact">
+      <div class="keyfact-label">Level</div>
+      <div class="keyfact-value">Year 3</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <h2>Welcome to Aquatic Sciences</h2>
+  <p class="section-lead">
+    Limnology sits at the intersection of hydrology, aquatic chemistry, ecology, and environmental policy. This course develops your ability to think across those fields simultaneously — because you cannot understand a lake or a river by looking at its biology alone, or its chemistry alone, or its physics alone. Each week pairs a 90-minute core lecture with a 30-minute hands-on data science module, building your skills as a data-literate freshwater scientist.
+  </p>
+
+  <div class="quick-links">
+    <a class="quick-link" href="schedule.html">
+      <div class="ql-icon" style="background:var(--accent-light);color:var(--accent);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
+      </div>
+      <div class="ql-text">
+        <div class="ql-title">Weekly Schedule</div>
+        <div class="ql-desc">Lectures, slides &amp; handouts for all 13 weeks</div>
+      </div>
+    </a>
+    <a class="quick-link" href="resources.html">
+      <div class="ql-icon" style="background:var(--gold-light);color:var(--gold);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.686-3.374a4.5 4.5 0 00-1.242-7.244l-4.5-4.5a4.5 4.5 0 00-6.364 6.364l1.757 1.757" /></svg>
+      </div>
+      <div class="ql-text">
+        <div class="ql-title">Resources</div>
+        <div class="ql-desc">R tutorials, podcasts &amp; reference texts</div>
+      </div>
+    </a>
+    <a class="quick-link" href="https://us02web.zoom.us/j/86882086910?pwd=Akan9qqcGowDZgLl3BBuotr8z8Xxlm.1">
+      <div class="ql-icon" style="background:#e8f0fb;color:#1a5fb4;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
+      </div>
+      <div class="ql-text">
+        <div class="ql-title">Join on Zoom</div>
+        <div class="ql-desc">Saturdays 10:15 AM — 1:10 PM GYT</div>
+      </div>
+    </a>
+  </div>
+
+  <h3>Weekly Class Structure</h3>
+  <div class="class-structure">
+    <div class="cs-time" style="color:var(--accent);">10:15 — 11:45</div>
+    <div class="cs-desc">Core Lecture — 90 minutes of limnology theory, discussions, and Guyanese case studies</div>
+    <div class="cs-time" style="color:var(--text-light);">11:45 — 12:15</div>
+    <div class="cs-desc">Break</div>
+    <div class="cs-time" style="color:var(--teal);">12:15 — 12:45</div>
+    <div class="cs-desc">Data Science Module — R programming and data analysis using that week's freshwater data</div>
+    <div class="cs-time" style="color:var(--text-light);">12:45 — 1:10</div>
+    <div class="cs-desc">Buffer — breathing room and wrap-up</div>
+  </div>
+</div>
+```
